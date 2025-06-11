@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SilentExe - Portafolio</title>
 
+  <link rel="icon" href="https://i.imgur.com/HUhIujV.jpeg" type="image/jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
 
   <style>
@@ -26,60 +28,76 @@
       position: relative;
     }
 
-    .animated-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
-      background-image: url('https://wallpapercave.com/wp/wp14041434.jpg');
-      background-size: cover;
-      background-repeat: repeat;
-      z-index: -1;
-      opacity: 0.08;
-      animation: moveBackground 60s linear infinite;
-    }
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/gray-floral.png');
+  background-repeat: repeat;
+  background-size: auto;
+  z-index: -1;
+  opacity: 0.08;
+  animation: scrollBackground 60s linear infinite;
+}
 
-    @keyframes moveBackground {
-      0% {
-        transform: translate(0, 0);
-      }
-      100% {
-        transform: translate(-50%, -50%);
-      }
-    }
+@keyframes scrollBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000px 0;
+  }
+}
 
-    .container {
-      background-color: rgba(0, 0, 0, 0.85);
-      border-radius: 20px;
-      padding: 40px 30px;
-      width: 90%;
-      max-width: 400px;
-      aspect-ratio: 1 / 1.2;
-      text-align: center;
-      z-index: 1;
-      position: relative;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-    }
 
-    .logo img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 3px solid #f9e29c;
-      animation: float 6s ease-in-out infinite, glow 4s ease-in-out infinite;
-    }
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-      }
-      50% {
-        transform: translateY(-8px) scale(1.03);
-      }
-    }
+
+.container {
+  background-color: rgba(0, 0, 0, 0.3); /* Negro con transparencia moderada */
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1.2;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.20); /* Suave resplandor blanco */
+}
+
+
+.logo img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #f9e29c;
+  animation: float 6s ease-in-out infinite, glow 4s ease-in-out infinite;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .logo img:hover {
+    transform: scale(1.08) rotate(2deg);
+    filter: brightness(1.1) drop-shadow(0 0 10px #f9e29c88);
+  }
+}
+
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 
     @keyframes glow {
       0%, 100% {
@@ -106,20 +124,26 @@
       margin-top: 30px;
     }
 
+
+
     .button {
-      background-color: #ff554a;
+      background: linear-gradient(145deg, #ff554a, #ff746b);
       color: white;
       padding: 15px;
       border: none;
-      border-radius: 25px;
+      border-radius: 30px;
       font-size: 16px;
       cursor: pointer;
       text-decoration: none;
-      transition: background 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 85, 74, 0.6), 0 0 25px rgba(255, 85, 74, 0.3);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
     }
 
     .button:hover {
-      background-color: #ff7267;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 120, 100, 0.9), 0 0 40px rgba(255, 85, 74, 0.6);
+      background: linear-gradient(145deg, #ff7267, #ff8e7a);
     }
 
     .footer {
@@ -127,6 +151,41 @@
       font-size: 13px;
       color: #ccc;
       font-style: italic;
+    }
+
+.email {
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+  color: #f9e29c;
+}
+
+.email:hover {
+  color: #fff8c9;
+  text-shadow: 0 0 8px #fff8c966, 0 0 14px #f9e29caa;
+  filter: brightness(1.2);
+}
+
+
+    .copied-msg {
+      position: absolute;
+      bottom: -39px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #252525cc;
+      color: #80ff80;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      box-shadow: 0 0 10px #80ff8055;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .copied-msg.show {
+      opacity: 1;
     }
 
     a {
@@ -141,20 +200,51 @@
 
   <div class="container">
     <div class="logo">
-      <img src="https://i.imgur.com/HUhIujV.jpeg" alt="SilentExe Foto de Perfil" />
+      <img src="https://i.imgur.com/HUhIujV.jpg" alt="SilentExe Foto de Perfil" />
     </div>
     <h1>SilentExe</h1>
     <p>Desarrollador Web</p>
-    <p>Email: <a href="mailto:silentexe@example.com">silentexe@example.com</a></p>
+
+    <p>Email: <span class="email" onclick="copyEmail()">silentexe@example.com</span></p>
 
     <div class="buttons">
       <a class="button" href="https://imdeadmizxk.github.io/Kabras-Menu/" target="_blank">Ver proyecto: Kabras Menú</a>
     </div>
 
-    <div class="footer">
-      Made by Silent
-    </div>
+    <div class="footer">Made by Silent</div>
+
+    <!-- Mensaje de copiado -->
+    <div id="copiedMsg" class="copied-msg">¡Copiado al portapapeles!</div>
   </div>
+
+<script>
+  // Desactiva clic derecho en toda la página
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // Espera a que cargue la imagen y aplica protecciones
+  window.addEventListener('DOMContentLoaded', () => {
+    const img = document.querySelector('.logo img');
+    if (img) {
+      img.setAttribute('oncontextmenu', 'return false');
+      img.setAttribute('ondragstart', 'return false');
+      img.style.pointerEvents = 'none';
+    }
+  });
+</script>
+
+
+  <script>
+    function copyEmail() {
+      const email = "silentexe@example.com";
+      navigator.clipboard.writeText(email).then(() => {
+        const msg = document.getElementById("copiedMsg");
+        msg.classList.add("show");
+        setTimeout(() => {
+          msg.classList.remove("show");
+        }, 2000);
+      });
+    }
+  </script>
 
 </body>
 </html>
