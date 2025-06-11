@@ -205,7 +205,7 @@
     <h1>SilentExe</h1>
     <p>Desarrollador Web</p>
 
-    <p>Email: <span class="email" onclick="copyEmail()">silentexe@example.com</span></p>
+    <p>Email: <span class="email" onclick="copyEmail()">yungdeath03@gmail.com</span></p>
 
     <div class="buttons">
       <a class="button" href="https://imdeadmizxk.github.io/Kabras-Menu/" target="_blank">Ver proyecto: Kabras Menú</a>
@@ -217,25 +217,20 @@
     <div id="copiedMsg" class="copied-msg">¡Copiado al portapapeles!</div>
   </div>
 
-<script>
-  // Desactiva clic derecho en toda la página
-  document.addEventListener('contextmenu', event => event.preventDefault());
-
-  // Espera a que cargue la imagen y aplica protecciones
-  window.addEventListener('DOMContentLoaded', () => {
-    const img = document.querySelector('.logo img');
-    if (img) {
-      img.setAttribute('oncontextmenu', 'return false');
-      img.setAttribute('ondragstart', 'return false');
-      img.style.pointerEvents = 'none';
-    }
-  });
-</script>
 
 
   <script>
+window.addEventListener('DOMContentLoaded', () => {
+  const img = document.querySelector('.logo img');
+  if (img) {
+    img.setAttribute('oncontextmenu', 'return false');
+    img.setAttribute('ondragstart', 'return false');
+    // img.style.pointerEvents = 'none'; ← Eliminar esta línea
+  }
+});
+
     function copyEmail() {
-      const email = "silentexe@example.com";
+      const email = "yungdeath03@gmail.com";
       navigator.clipboard.writeText(email).then(() => {
         const msg = document.getElementById("copiedMsg");
         msg.classList.add("show");
