@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SilentExe - Portafolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      color: #f9e29c;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1c1818;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image: url('https://wallpapercave.com/wp/wp14041434.jpg');
+      background-size: cover;
+      background-repeat: repeat;
+      z-index: -1;
+      opacity: 0.08;
+      animation: moveBackground 60s linear infinite;
+    }
+
+    @keyframes moveBackground {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.85);
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1.2;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .logo img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #f9e29c;
+      animation: float 6s ease-in-out infinite, glow 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-8px) scale(1.03);
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 10px #f9e29c66;
+      }
+      50% {
+        box-shadow: 0 0 20px #f9e29cbb;
+      }
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .button {
+      background-color: #ff554a;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #ff7267;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #ccc;
+      font-style: italic;
+    }
+
+    a {
+      color: #f9e29c;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="animated-bg"></div>
+
+  <div class="container">
+    <div class="logo">
+      <img src="https://i.imgur.com/HUhIujV.jpeg" alt="SilentExe Foto de Perfil" />
+    </div>
+    <h1>SilentExe</h1>
+    <p>Desarrollador Web</p>
+    <p>Email: <a href="mailto:silentexe@example.com">silentexe@example.com</a></p>
+
+    <div class="buttons">
+      <a class="button" href="https://imdeadmizxk.github.io/Kabras-Menu/" target="_blank">Ver proyecto: Kabras Menú</a>
+    </div>
+
+    <div class="footer">
+      Made by Silent
+    </div>
+  </div>
+
+</body>
+</html>
