@@ -17,7 +17,7 @@
 
   body {
     font-family: 'Playfair Display', serif;
-    color: #ffffff; /* Texto blanco */
+    color: white;
     background-color: #1c1818;
     height: 100dvh;
     display: flex;
@@ -52,7 +52,7 @@
     max-width: 400px;
     aspect-ratio: 1 / 1.2;
     text-align: center;
-    box-shadow: 0 0 35px rgba(255, 255, 255, 0.20); /* Glow blanco */
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.20);
     position: relative;
     z-index: 1;
   }
@@ -63,7 +63,7 @@
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 3px solid #ffffff; /* Borde blanco */
+    border: 3px solid white;
     animation: float 6s ease-in-out infinite, glow 4s ease-in-out infinite;
     transition: transform 0.5s ease, filter 0.5s ease;
   }
@@ -71,7 +71,7 @@
   @media (hover: hover) {
     .logo img:hover {
       transform: scale(1.08) rotate(2deg);
-      filter: brightness(1.1) drop-shadow(0 0 10px #ffffff88); /* Glow blanco */
+      filter: brightness(1.1) drop-shadow(0 0 10px white);
     }
   }
 
@@ -81,8 +81,8 @@
   }
 
   @keyframes glow {
-    0%, 100% { box-shadow: 0 0 10px #ffffff66; }
-    50% { box-shadow: 0 0 20px #ffffffbb; }
+    0%, 100% { box-shadow: 0 0 10px white; }
+    50% { box-shadow: 0 0 20px white; }
   }
 
   h1 {
@@ -110,14 +110,14 @@
     font-size: 16px;
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 25px rgba(255, 255, 255, 0.2); /* Glow blanco */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
     backdrop-filter: blur(4px);
   }
 
   .button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.6); /* Glow blanco más fuerte */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.6);
     background: linear-gradient(145deg, #ff7267, #ff8e7a);
   }
 
@@ -130,14 +130,14 @@
 
   .email {
     cursor: pointer;
-    color: #ffffff; /* Texto blanco */
+    color: white;
     transition: all 0.3s ease;
     position: relative;
   }
 
   .email:hover {
-    color: #ffffff;
-    text-shadow: 0 0 8px #ffffff88, 0 0 14px #ffffffaa; /* Glow blanco */
+    color: white;
+    text-shadow: 0 0 8px white, 0 0 14px white;
     filter: brightness(1.2);
   }
 
@@ -147,11 +147,11 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #252525cc;
-    color: #80ff80;
+    color: white;
     padding: 8px 14px;
     border-radius: 8px;
     font-size: 13px;
-    box-shadow: 0 0 10px #80ff8055;
+    box-shadow: 0 0 10px white;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -162,7 +162,7 @@
   }
 
   a {
-    color: #ffffff; /* Texto blanco para enlaces */
+    color: white;
     text-decoration: underline;
   }
 </style>
