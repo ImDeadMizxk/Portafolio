@@ -165,12 +165,6 @@
     color: #ffffff;
     text-decoration: underline;
   }
-.button:focus,
-.button:active {
-  outline: none;
-  box-shadow: none;
-}
-
 
 </style>
 
@@ -206,6 +200,12 @@
       img.setAttribute('draggable', 'false');
       img.addEventListener('contextmenu', e => e.preventDefault());
       img.addEventListener('dragstart', e => e.preventDefault());
+    });
+  });
+  // Evitar el recuadro azul en botones al tocarlos en móviles
+  document.querySelectorAll('.button').forEach(button => {
+    button.addEventListener('touchstart', () => {
+      button.blur();
     });
   });
 
