@@ -8,164 +8,165 @@
   <link rel="icon" href="https://i.imgur.com/HUhIujV.jpeg" type="image/jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    body {
-      font-family: 'Playfair Display', serif;
-      color: #f9e29c;
-      background-color: #1c1818;
-      height: 100dvh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      overflow: auto;
-      position: relative;
-    }
+  body {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff; /* Texto blanco */
+    background-color: #1c1818;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: auto;
+    position: relative;
+  }
 
-    .animated-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-image: url('https://www.transparenttextures.com/patterns/gray-floral.png');
-      background-repeat: repeat;
-      opacity: 0.08;
-      z-index: -1;
-      animation: scrollBackground 60s linear infinite;
-    }
+  .animated-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/gray-floral.png');
+    background-repeat: repeat;
+    opacity: 0.08;
+    z-index: -1;
+    animation: scrollBackground 60s linear infinite;
+  }
 
-    @keyframes scrollBackground {
-      from { background-position: 0 0; }
-      to { background-position: -1000px 0; }
-    }
+  @keyframes scrollBackground {
+    from { background-position: 0 0; }
+    to { background-position: -1000px 0; }
+  }
 
-    .container {
-      background-color: rgba(0, 0, 0, 0.3);
-      border-radius: 20px;
-      padding: 40px 30px;
-      width: 90%;
-      max-width: 400px;
-      aspect-ratio: 1 / 1.2;
-      text-align: center;
-      box-shadow: 0 0 35px rgba(255, 255, 255, 0.20);
-      position: relative;
-      z-index: 1;
-    }
+  .container {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1.2;
+    text-align: center;
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.20); /* Glow blanco */
+    position: relative;
+    z-index: 1;
+  }
 
-    .logo img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 3px solid #f9e29c;
-      animation: float 6s ease-in-out infinite, glow 4s ease-in-out infinite;
-      transition: transform 0.5s ease, filter 0.5s ease;
-    }
+  .logo img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #ffffff; /* Borde blanco */
+    animation: float 6s ease-in-out infinite, glow 4s ease-in-out infinite;
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
 
-    @media (hover: hover) {
-      .logo img:hover {
-        transform: scale(1.08) rotate(2deg);
-        filter: brightness(1.1) drop-shadow(0 0 10px #f9e29c88);
-      }
+  @media (hover: hover) {
+    .logo img:hover {
+      transform: scale(1.08) rotate(2deg);
+      filter: brightness(1.1) drop-shadow(0 0 10px #ffffff88); /* Glow blanco */
     }
+  }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
 
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 10px #f9e29c66; }
-      50% { box-shadow: 0 0 20px #f9e29cbb; }
-    }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 10px #ffffff66; }
+    50% { box-shadow: 0 0 20px #ffffffbb; }
+  }
 
-    h1 {
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
+  h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
 
-    p {
-      margin: 10px 0;
-    }
+  p {
+    margin: 10px 0;
+  }
 
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 30px;
-    }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+  }
 
-    .button {
-      background: linear-gradient(145deg, #ff554a, #ff746b);
-      color: white;
-      padding: 15px;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 0 15px rgba(255, 85, 74, 0.6), 0 0 25px rgba(255, 85, 74, 0.3);
-      transition: all 0.3s ease;
-      backdrop-filter: blur(4px);
-    }
+  .button {
+    background: linear-gradient(145deg, #ff554a, #ff746b);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 25px rgba(255, 255, 255, 0.2); /* Glow blanco */
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+  }
 
-    .button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(255, 120, 100, 0.9), 0 0 40px rgba(255, 85, 74, 0.6);
-      background: linear-gradient(145deg, #ff7267, #ff8e7a);
-    }
+  .button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.6); /* Glow blanco más fuerte */
+    background: linear-gradient(145deg, #ff7267, #ff8e7a);
+  }
 
-    .footer {
-      margin-top: 30px;
-      font-size: 13px;
-      color: #ccc;
-      font-style: italic;
-    }
+  .footer {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #ccc;
+    font-style: italic;
+  }
 
-    .email {
-      cursor: pointer;
-      color: #f9e29c;
-      transition: all 0.3s ease;
-      position: relative;
-    }
+  .email {
+    cursor: pointer;
+    color: #ffffff; /* Texto blanco */
+    transition: all 0.3s ease;
+    position: relative;
+  }
 
-    .email:hover {
-      color: #fff8c9;
-      text-shadow: 0 0 8px #fff8c966, 0 0 14px #f9e29caa;
-      filter: brightness(1.2);
-    }
+  .email:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #ffffff88, 0 0 14px #ffffffaa; /* Glow blanco */
+    filter: brightness(1.2);
+  }
 
-    .copied-msg {
-      position: absolute;
-      bottom: -39px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #252525cc;
-      color: #80ff80;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 13px;
-      box-shadow: 0 0 10px #80ff8055;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
+  .copied-msg {
+    position: absolute;
+    bottom: -39px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #252525cc;
+    color: #80ff80;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    box-shadow: 0 0 10px #80ff8055;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
 
-    .copied-msg.show {
-      opacity: 1;
-    }
+  .copied-msg.show {
+    opacity: 1;
+  }
 
-    a {
-      color: #f9e29c;
-      text-decoration: underline;
-    }
-  </style>
+  a {
+    color: #ffffff; /* Texto blanco para enlaces */
+    text-decoration: underline;
+  }
+</style>
+
 </head>
 <body>
 
