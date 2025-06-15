@@ -25,6 +25,7 @@
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow: hidden; /* EDIT: Añadido para evitar el scroll */
         }
 
         /* Fondo de partículas */
@@ -81,7 +82,6 @@
     <div id="particles-js"></div>
 
     <!-- Contenedor Principal -->
-    <!-- EDIT: Se cambiaron las clases `items-center` por `items-start sm:items-center` y se añadió `pt-20 sm:pt-4` -->
     <main class="min-h-screen w-full flex items-start sm:items-center justify-center p-4 pt-20 sm:pt-4">
         
         <div class="card-container w-full max-w-sm bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-2xl shadow-black/20 p-8 text-center transition-all duration-300 hover:border-slate-500">
