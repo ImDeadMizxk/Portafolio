@@ -1,2 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SilentExe - Desarrollador Web</title>
 
-+clean
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imgur.com/HUhIujV.jpeg" type="image/jpeg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Estilos base */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow: hidden; /* Evita el scroll no deseado */
+        }
+
+        /* Fondo de partículas */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Animaciones */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes fadeInSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Aplicamos la animación con un retraso escalonado */
+        .card-container { animation: fadeInSlideUp 0.5s ease-out forwards; }
+        .card-container > *:nth-child(1) { animation: fadeInSlideUp 0.5s 0.2s ease-out forwards; opacity: 0; } /* img */
+        .card-container > *:nth-child(2) { animation: fadeInSlideUp 0.5s 0.3s ease-out forwards; opacity: 0; } /* h1 */
+        .card-container > *:nth-child(3) { animation: fadeInSlideUp 0.5s 0.4s ease-out forwards; opacity: 0; } /* p */
+        .card-container > *:nth-child(4) { animation: fadeInSlideUp 0.5s 0.5s ease-out forwards; opacity: 0; } /* email */
+        .card-container > *:nth-child(5) { animation: fadeInSlideUp 0.5s 0.6s ease-out forwards; opacity: 0; } /* buttons */
+        .card-container > *:nth-child(6) { animation: fadeInSlideUp 0.5s 0.7s ease-out forwards; opacity: 0; } /* social */
+
+
+        /* Mensaje de "Copiado" */
+        .toast-enter-active {
+            opacity: 1 !important;
+            transform: translateX(-50%) translateY(0) scale(1) !important;
+            transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .toast-exit-active {
+            opacity: 0 !important;
+            transform: translateX(-50%) translateY(20px) scale(0.9) !important;
+            transition: all 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-gray-300">
+
+    <!-- Fondo de Partículas -->
+    <div id="particles-js"></div>
+
+    <!-- Contenedor Principal -->
+    <main class="min-h-screen w-full flex items-start sm:items-center justify-center p-4 pt-20 sm:pt-4">
+        
+        <div class="card-container w-full max-w-sm bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-2xl shadow-black/20 p-8 text-center transition-all duration-300 hover:border-slate-500">
+            
+            <!-- Imagen de Perfil -->
+            <img 
+                src="https://i.imgur.com/HUhIujV.jpg" 
+                alt="Foto de Perfil de SilentExe"
+                class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-slate-700 shadow-lg animate-float"
+                onerror="this.onerror=null;this.src='https://placehold.co/112x112/e2e8f0/64748b?text=S';"
+            />
+            
+            <!-- Nombre y Título -->
+            <h1 class="text-2xl font-bold text-white">SilentExe</h1>
+            <p class="text-slate-400 mt-1">Desarrollador Web</p>
+
+            <!-- Información de Contacto -->
+            <div class="mt-6 flex items-center justify-center gap-2 text-slate-400">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span id="emailText">main0213@gmail.com</span>
+                <button onclick="copyEmail()" title="Copiar email" class="p-1 rounded-md hover:bg-slate-700 active:bg-slate-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                    <i data-lucide="copy" class="w-4 h-4 text-slate-300"></i>
+                </button>
+            </div>
+
+            <!-- Botones de Proyectos -->
+            <div class="mt-8 flex flex-col gap-4">
+                <a 
+                    href="https://imdeadmizxk.github.io/Kabras-Menu/" 
+                    target="_blank"
+                    class="w-full bg-white text-slate-900 font-semibold py-3 px-5 rounded-lg transition-all transform hover:scale-105 hover:bg-gray-200 active:scale-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-800 focus-visible:ring-white"
+                >
+                    Proyecto: Kabras Menú
+                </a>
+                <a 
+                    href="https://imdeadmizxk.github.io/UI-CORNER-EDITOR/" 
+                    target="_blank"
+                    class="w-full bg-transparent text-white border border-slate-600 font-semibold py-3 px-5 rounded-lg transition-all transform hover:scale-105 hover:bg-slate-700/50 hover:border-slate-500 active:scale-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-800 focus-visible:ring-slate-500"
+                >
+                    Proyecto: UI CORNER EDITOR
+                </a>
+                <!-- NUEVO PROYECTO AÑADIDO -->
+                <a 
+                    href="https://imdeadmizxk.github.io/Music-Player/" 
+                    target="_blank"
+                    class="w-full bg-transparent text-white border border-slate-600 font-semibold py-3 px-5 rounded-lg transition-all transform hover:scale-105 hover:bg-slate-700/50 hover:border-slate-500 active:scale-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-800 focus-visible:ring-slate-500"
+                >
+                    Proyecto: Music Player
+                </a>
+            </div>
+
+             <!-- Redes Sociales -->
+            <div class="mt-8 flex justify-center gap-6 text-slate-500">
+                <a href="#" class="hover:text-white transition-transform transform hover:-translate-y-1" title="GitHub">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="hover:text-white transition-transform transform hover:-translate-y-1" title="LinkedIn">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="hover:text-white transition-transform transform hover:-translate-y-1" title="Twitter / X">
+                     <i data-lucide="x" class="w-6 h-6"></i>
+                </a>
+            </div>
+            
+        </div>
+
+    </main>
+    
+    <!-- Mensaje de "Copiado" (Toast) -->
+    <div id="toast" class="fixed bottom-5 left-1/2 bg-white text-slate-900 text-sm font-semibold py-2 px-4 rounded-full shadow-lg" style="opacity: 0; pointer-events: none; transform: translateX(-50%) translateY(20px) scale(0.9);">
+        ¡Email copiado al portapapeles!
+    </div>
+
+    <!-- Librería Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // --- INICIALIZACIÓN DE ICONOS ---
+        lucide.createIcons();
+        
+        // --- BLOQUEO DE IMÁGENES Y MENÚ CONTEXTUAL ---
+        // Bloquear clic derecho en toda la página
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Bloquear arrastrar y clic derecho en todas las imágenes
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('img').forEach(img => {
+                img.setAttribute('draggable', 'false');
+                img.addEventListener('contextmenu', e => e.preventDefault());
+                img.addEventListener('dragstart', e => e.preventDefault());
+            });
+        });
+
+        // --- FUNCIÓN PARA COPIAR EMAIL ---
+        function copyEmail() {
+            const email = document.getElementById("emailText").innerText;
+
+            const showToast = () => {
+                const toast = document.getElementById("toast");
+                if (toast) {
+                    toast.classList.add('toast-enter-active');
+                    toast.classList.remove('toast-exit-active');
+                    setTimeout(() => {
+                        toast.classList.remove('toast-enter-active');
+                        toast.classList.add('toast-exit-active');
+                    }, 2000);
+                }
+            };
+        
+            const fallbackCopy = () => {
+                const textArea = document.createElement("textarea");
+                textArea.value = email;
+                textArea.style.position = "fixed"; 
+                textArea.style.left = "-9999px";
+                document.body.appendChild(textArea);
+                textArea.focus(); 
+                textArea.select();
+                try {
+                    const successful = document.execCommand('copy');
+                    if(successful) showToast();
+                } catch (err) {
+                    console.error('Fallback: No se pudo copiar', err);
+                }
+                document.body.removeChild(textArea);
+            };
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(email).then(showToast).catch(err => {
+                    console.warn("Error con Clipboard API, usando fallback:", err);
+                    fallbackCopy();
+                });
+            } else {
+                fallbackCopy();
+            }
+        }
+        
+        // --- CONFIGURACIÓN DE PARTICLES.JS ---
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#475569" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#475569", "opacity": 0.4, "width": 1 },
+                "move": {
+                    "enable": true, "speed": 1, "direction": "none", "random": false,
+                    "straight": false, "out_mode": "out", "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                    "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+                    "repulse": { "distance": 200, "duration": 0.4 },
+                    "push": { "particles_nb": 4 },
+                    "remove": { "particles_nb": 2 }
+                }
+            },
+            "retina_detect": true
+        });
+
+    </script>
+
+</body>
+</html>
